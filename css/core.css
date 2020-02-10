@@ -269,6 +269,24 @@ header nav a:hover {
 .main .content .list a {
   color: black;
 }
+.main .content .shootlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  margin: 4em;
+  line-height: 2;
+  align-self: flex-start;
+}
+.main .content .shootlist b {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.main .content .shootlist a {
+  color: black;
+}
 .main .gallery {
   display: flex;
   flex-direction: row;
