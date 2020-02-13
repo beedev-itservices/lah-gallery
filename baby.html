@@ -9,8 +9,8 @@
       href="images/minilogo.png">
     <title>Maternity & Baby - LAH Photography</title>
     <style>
-    
-    </style>
+      .mySlides {display:none;}
+  </style>
   </head>
   <body>
 <!--Header & Navigation-->
@@ -31,11 +31,29 @@
         </div>
         <div class="content">
 			<div class="shootlist">
-				<b>2019:</b>
-			</div>
+        <b>2019:</b>
+        <a href="2019/112319a.html">Diane's 1st Birthday</a>
+        <a href="2019/122219b.html">December Birthday Boy</a>
+        <a href="2019/122219a.html">Baby's 1st Christmas</a>
+      </div>
+      
+      <div class="homeimgs center">
+        <img class="mySlides center" src="images/baby04.jpg">
+        <img class="mySlides center" src="images/baby02.jpg">
+        <img class="mySlides center" src="images/baby03.jpg">
+        <img class="mySlides center" src="images/maternity15.jpg">
+        <img class="mySlides center" src="images/maternity16.jpg">
+        <img class="mySlides center" src="images/baby08.jpg">
+        <img class="mySlides center" src="images/baby05.jpg">
+      </div>
 
 			<div class="shootlist">
-				<b>2020:</b>
+        <b>2020:</b>
+        <a href="2020/011420b.html">Bri's Maternity Shoot</a>
+        <a href="2020/011420a.html">Maternity & Family Shoot</a>
+        <a href="2020/011920c.html">Miss Serenity</a>
+        <a href="2020/011920b.html">Miss Remington</a>
+        <a href="2020/012620a.html">Miss Amelia</a>
 			</div>
             
         </div>
@@ -49,7 +67,20 @@
     
    
     <script>
+      var myIndex = 0;
+  carousel();
 
-    </script>
+  function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+  }
+  </script>
   </body>
 </html>

@@ -224,6 +224,9 @@ header nav a:hover {
 .main .heading h1 {
   font-size: 3em;
   justify-content: flex-start;
+  max-width: 18em;
+  margin: auto;
+  text-align: center;
 }
 .main .heading h2 {
   font-size: 2em;
@@ -251,6 +254,15 @@ header nav a:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+}
+.main .content .homeimgs {
+  position: relative;
+  top: 30px;
+  padding: 1em;
+  margin: 1em;
+}
+.main .content .homeimgs img {
+  max-block-size: 20em;
 }
 .main .content .list {
   display: flex;
@@ -320,6 +332,7 @@ header nav a:hover {
   }
   .main .heading h1 {
     font-size: 2.5em;
+    max-width: 10em;
   }
   .main .heading h2 {
     font-size: 1.6em;
