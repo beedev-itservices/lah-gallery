@@ -9,7 +9,7 @@
       href="images/minilogo.png">
     <title>Annual Toy Drive - LAH Photography</title>
     <style>
-    
+        .mySlides {display:none;}
     </style>
   </head>
   <body>
@@ -32,17 +32,30 @@
             <h3>Keep and eye on the News and Facebook pages for this years dates</h3>
         </div>
         <div class="content">
-            <div class="shootlist">
-				<b>2017:</b>
-			</div>
-
-            <div class="shootlist">
-				<b>2018:</b>
-			</div>
-
-			<div class="shootlist">
-				<b>2019:</b>
-			</div>
+          <div class="shootlist">
+            <b>2018:</b>
+          </div>
+          
+          <div class="homeimgs center">
+            <img class="mySlides center" src="images/toy03.jpg">
+            <img class="mySlides center" src="images/toy20.jpg">
+            <img class="mySlides center" src="images/toy13.jpg">
+            <img class="mySlides center" src="images/toy06.jpg">
+            <img class="mySlides center" src="images/toy08.jpg">
+            <img class="mySlides center" src="images/toy12.jpg">
+            <img class="mySlides center" src="images/toy19.jpg">
+          </div>
+    
+          <div class="shootlist">
+            <b>2019:</b>
+            <a href="2019/toydrive01.html">Page #1</a>
+            <a href="2019/toydrive02.html">Page #2</a>
+            <a href="2019/toydrive03.html">Page #3</a>
+            <a href="2019/toydrive04.html">Page #4</a>
+            <a href="2019/toydrive05.html">Page #5</a>
+          </div>
+        </div>
+            
             
         </div>
     </div>
@@ -55,7 +68,20 @@
     
    
     <script>
+ var myIndex = 0;
+  carousel();
 
+  function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+  }
     </script>
   </body>
 </html>
