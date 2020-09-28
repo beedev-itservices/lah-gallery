@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/core.css">
     <link rel="icon" 
       type="image/png" 
@@ -14,22 +15,31 @@
   </head>
   <body>
 <!--Header & Navigation-->
-      <header class="center">
-        <img src="images/logo.jpg" class="logo">
-        <nav>
-			<a href="index.html">Home</a>
-            <a href="http://lah-photography.com">Main Site</a>
-            <a href="http://archive.lah-photography.com">Archives</a>
-            <a href="http://lah-photography.com/contact.html">Contact</a>
-          </nav>
-      </header>
+<header class="center">
+  <img src="images/logo.jpg" class="logo">
+  <nav>
+    <a href="javascript:void(0);" class="icon" onclick="myMenu()"><i class="fa fa-bars"></i></a>
+      <div id="myLinks">
+        <a href="index.html">Home</a>
+      <a href="http://lah-photography.com">Main Site</a>
+      <a href="http://archive.lah-photography.com">Archives</a>
+      <a href="http://lah-photography.com/contact.html">Contact</a>
+      </div>
+      <div id="desktop">
+        <a href="index.html">Home</a>
+      <a href="http://lah-photography.com">Main Site</a>
+      <a href="http://archive.lah-photography.com">Archives</a>
+      <a href="http://lah-photography.com/contact.html">Contact</a>
+      </div>
+    </nav>
+</header>
 <!--Main container-->
       <div class="main center">
         <div class="heading">
 			<h1>The Sports Gallery</h1>
 			<h2>Click a link below to view the session</h2>
         </div>
-        <div class="content">
+        <div class="content alt">
 			<div class="shootlist">
 				<b>2019:</b>
       </div>
@@ -58,21 +68,6 @@
 
     
    
-    <script>
- var myIndex = 0;
-  carousel();
-
-  function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 5000); // Change image every 2 seconds
-  }
-    </script>
+    <script type="text/javascript" src="js/core.js"></script>
   </body>
 </html>

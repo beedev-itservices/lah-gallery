@@ -1,255 +1,119 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// Imports
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
+@import 'less/reset.less';
+@import 'less/base.less';
 
-* {box-sizing: border-box;}
-
-html, body {height: 100%;}
-
-// Variables
-
-@brown: #7e685a;
-@white: white;
-@border: 4px groove @brown;
-@1175: ~"only screen and (max-width: 1175px)";
-@975: ~"only screen and (max-width: 975px)";
-@730: ~"only screen and (max-width: 730px)";
-@400: ~"only screen and (max-width: 400px)";
-
-// Mixins
-
-.flexrow {display: flex;
-    flex-direction: row;
-    align-items: center;}
-
-.flexcolumn {display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;}
-
-// Basic Styles
-
-.center {margin: auto;}
 
 // Main Styles
 
 // Header and Navigation
 
-header {.flexcolumn();
-    justify-content: space-around;
-    position: fixed;
+header {z-index: 10;
     overflow: hidden;
-    top: 5px;
-    z-index: 10;
-    background: @white;
-    padding: 5px;
-    width: 100%;
+    position: relative;
+    .flexcolumn();
 
-    nav {.flexrow();
-        justify-content: space-around;
-        padding: .25em 1em .25em 1em;
-        width: 100%;
-        background: @brown;
+    img {width: 13em;
+        justify-content: center;
+        align-self: center;}
+    nav {background-color: @navbg;
+        width: 95%;
+        .flexcolumn();
 
-        a {padding: 1em;
-            color: white;
+        #myLinks {display: none;}
+        #desktop {display: none;}
+
+        a {color: @font;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            display: block;
         
-            &:link {text-decoration: none;}
-            &:visited {text-decoration: none;}
-            &:hover {text-decoration: underline;
-                color: black;
+            .icon {background: @navbg;
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;}
+
+            &:hover {background-color: @font;
+                color: @mainbg;
                 font-weight: bold;}
+            &:visited {text-decoration: none;}
         }
     }
 }
 
-@media @730 {
-    header {z-index: 8;
-
-        img {width: 30em;}
-    }
-}
-
-@media @400 {
-    header {z-index: 7;
-    
-        img {width: 20em;}
-    
-        nav {flex-wrap: wrap;}
-    }
-}
 
 // Main Container
 
 .main {.flexcolumn();
     position: relative;
-    margin: 16em 1em 2em 1em;
+    margin: 1em .5em 2em .5em;
     border: @border;
-    border-radius: 20%;
+    border-radius: 5%;
 
     .heading {.flexcolumn();
         padding: 1em;
 
-        h1 {font-size: 3em;
-            justify-content: flex-start;
-            max-width: 18em;
-            margin: auto;
+        h1 {font-size: 2.5em;
+            justify-content: center;
             text-align: center;}
 
-        h2 {font-size: 2em;
-            margin: 1em 0 0 0;}
+        h2 {font-size: 2.25em;}
 
-        h3 {font-size: 1.4em;
-            margin: 1em 0 0 0;}
-
-        .otherlinks {.flexrow();
-            justify-content: space-around;
-            padding: .25em 1em;
-        
-            p {padding: .25em 1em;}
-            
-            a {padding: .25em 1em;}
+        h3 {font-size: 1.5em;
+            margin: .5em;
+            text-align: center;}
+        .otherlinks {.flexcolumn();
+            p {font-size: 1.1em;
+                padding: .8em;}
+            a {font-size: 1.1em;
+                color: @font;
+                padding: .5em;}
         }
     }
-
-    .content {.flexrow();
-        justify-content: space-around;
-
-        .homeimgs {position: relative;
-            top: 30px;
-            padding: 1em;
-            margin: 1em;
-
-            img {max-block-size: 20em;}
-        } 
-
-        .list {.flexcolumn;
-            padding: 2em;
-            margin: 4em;
-            line-height: 2;
-            align-self: flex-start;
-
-            b {font-size: 1.5em;
-                font-weight: bold;}
-
-            a {color: black;}
-        }  
-        
-        .shootlist {.flexcolumn;
-            padding: 2em;
-            margin: 4em;
-            line-height: 2;
-            align-self: flex-start;
-
-            b {font-size: 1.5em;
+    .content {.flexcolumn();
+        .list {.flexcolumn();
+            padding: 1em .5em;
+            b {font-size: 1.1em;
                 font-weight: bold;
-                text-decoration: underline;}
+                padding: .5em;}
+            a {font-size: 1.1em;
+                color: @font;
+                padding: .5em 0;}
+        }
+        .homeimgs {width: 15em;
+            padding: .5em 0;
+            margin: 0;
+            img {width: 13em;
+                border-radius: 10%;}
+        }
+        .shootlist {.flexcolumn();
+            padding: 1em .5em;
+            b {font-size: 1.1em;
+                font-weight: bold;
+                padding: .5em;}
+            a {font-size: 1.1em;
+                color: @font;
+                padding: .5em 0;}
 
-            a {color: black;}
-        } 
+        }
+
     }
-
     .gallery {.flexrow();
         flex-wrap: wrap;
+        align-items: center;
         justify-content: space-evenly;
         margin: 1em;
-
-        img {width: 15em;
+        img {width: 10em;
             margin: .25em;
             border-radius: 50%;}
-
     }
-}
-
-@media @1175 {
-    
-    .main {border-radius: 19%;
-
-        .content {justify-content: space-evenly;
-
-            .list {margin: 3em;}  
-        } 
-    }
-}
-
-@media @975 {
-    .main {border-radius: 15%;
-    
-        .heading {padding: 1em;
-
-            h1 {font-size: 2.5em;
-                max-width: 10em;}
-            h2 {font-size: 1.6em;}
-        }
-
-        .content {justify-content: space-evenly;
-            flex-wrap: wrap;
-            width: 50em;
-            
-        }
-    }
-}
-
-@media @730 {
-    .main {border-radius: 5%;
-        
-        .content {width: 40em;
-        
-            .list {padding: 1em;}
-        }
-    }
-}
-
-@media @400 {
-    .main {margin: 20em 1em 2em 1em;}
 }
 
 // Footer
 
 .footer {.flexcolumn();
 }
+
+@import 'less/media.less';
